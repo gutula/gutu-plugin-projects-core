@@ -71,6 +71,10 @@ Owns project execution, milestone progress, and delivery-driven billing readines
 | Action | `projects.projects.create` | Permission: `projects.projects.write` | Create Project<br>Idempotent<br>Audited |
 | Action | `projects.milestones.complete` | Permission: `projects.milestones.write` | Complete Milestone<br>Non-idempotent<br>Audited |
 | Action | `projects.billing.request` | Permission: `projects.billing.request` | Request Project Billing<br>Non-idempotent<br>Audited |
+| Action | `projects.projects.hold` | Permission: `projects.projects.write` | Place Record On Hold<br>Non-idempotent<br>Audited |
+| Action | `projects.projects.release` | Permission: `projects.projects.write` | Release Record Hold<br>Non-idempotent<br>Audited |
+| Action | `projects.projects.amend` | Permission: `projects.projects.write` | Amend Record<br>Non-idempotent<br>Audited |
+| Action | `projects.projects.reverse` | Permission: `projects.projects.write` | Reverse Record<br>Non-idempotent<br>Audited |
 | Resource | `projects.projects` | Portal disabled | Project headers, budgets, and delivery lifecycle state.<br>Purpose: Own execution truth for project-backed delivery without borrowing order or ledger ownership.<br>Admin auto-CRUD enabled<br>Fields: `title`, `recordState`, `approvalState`, `postingState`, `fulfillmentState`, `updatedAt` |
 | Resource | `projects.milestones` | Portal disabled | Milestones, progress gates, and completion state.<br>Purpose: Track project execution and completion posture as a distinct operational truth.<br>Admin auto-CRUD enabled<br>Fields: `label`, `status`, `requestedAction`, `updatedAt` |
 | Resource | `projects.billing-requests` | Portal disabled | Billing readiness and milestone-billing request records.<br>Purpose: Request downstream invoicing without letting project execution mutate finance directly.<br>Admin auto-CRUD enabled<br>Fields: `severity`, `status`, `reasonCode`, `updatedAt` |
@@ -156,11 +160,11 @@ stateDiagram-v2
 ### 1. Host wiring
 
 ```ts
-import { manifest, createPrimaryRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/projects-core";
+import { manifest, createProjectAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/projects-core";
 
 export const pluginSurface = {
   manifest,
-  createPrimaryRecordAction,
+  createProjectAction,
   BusinessPrimaryResource,
   jobDefinitions,
   workflowDefinitions,
@@ -174,10 +178,10 @@ Use this pattern when your host needs to register the plugin’s declared export
 ### 2. Action-first orchestration
 
 ```ts
-import { manifest, createPrimaryRecordAction } from "@plugins/projects-core";
+import { manifest, createProjectAction } from "@plugins/projects-core";
 
 console.log("plugin", manifest.id);
-console.log("action", createPrimaryRecordAction.id);
+console.log("action", createProjectAction.id);
 ```
 
 - Prefer action IDs as the stable integration boundary.
@@ -219,7 +223,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current truth
 
-- Exports 3 governed actions: `projects.projects.create`, `projects.milestones.complete`, `projects.billing.request`.
+- Exports 7 governed actions: `projects.projects.create`, `projects.milestones.complete`, `projects.billing.request`, `projects.projects.hold`, `projects.projects.release`, `projects.projects.amend`, `projects.projects.reverse`.
 - Owns 3 resource contracts: `projects.projects`, `projects.milestones`, `projects.billing-requests`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -233,7 +237,7 @@ console.log("action", createPrimaryRecordAction.id);
 
 ### Current gaps
 
-- Repo-local documentation verification entrypoints were missing before this pass and need to stay green as the repo evolves.
+- No extra gaps were discovered beyond the plugin’s declared boundaries.
 
 ### Recommended next
 

@@ -26,7 +26,7 @@ Project plans, milestones, budget posture, execution visibility, and project-dri
 
 Owns project execution, milestone progress, and delivery-driven billing readiness without collapsing into sales or accounting truth.
 
-- Exports 3 governed actions: `projects.projects.create`, `projects.milestones.complete`, `projects.billing.request`.
+- Exports 7 governed actions: `projects.projects.create`, `projects.milestones.complete`, `projects.billing.request`, `projects.projects.hold`, `projects.projects.release`, `projects.projects.amend`, `projects.projects.reverse`.
 - Owns 3 resource contracts: `projects.projects`, `projects.milestones`, `projects.billing-requests`.
 - Publishes 2 job definitions with explicit queue and retry policy metadata.
 - Publishes 1 workflow definition with state-machine descriptions and mandatory steps.
@@ -71,7 +71,7 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 
 | Surface | Count | Details |
 | --- | --- | --- |
-| Actions | 3 | `projects.projects.create`, `projects.milestones.complete`, `projects.billing.request` |
+| Actions | 7 | `projects.projects.create`, `projects.milestones.complete`, `projects.billing.request`, `projects.projects.hold`, `projects.projects.release`, `projects.projects.amend`, `projects.projects.reverse` |
 | Resources | 3 | `projects.projects`, `projects.milestones`, `projects.billing-requests` |
 | Jobs | 2 | `projects.projections.refresh`, `projects.reconciliation.run` |
 | Workflows | 1 | `project-delivery-lifecycle` |
@@ -96,10 +96,10 @@ bun run docs:check
 ```
 
 ```ts
-import { manifest, createPrimaryRecordAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/projects-core";
+import { manifest, createProjectAction, BusinessPrimaryResource, jobDefinitions, workflowDefinitions, adminContributions, uiSurface } from "@plugins/projects-core";
 
 console.log(manifest.id);
-console.log(createPrimaryRecordAction.id);
+console.log(createProjectAction.id);
 console.log(BusinessPrimaryResource.id);
 ```
 

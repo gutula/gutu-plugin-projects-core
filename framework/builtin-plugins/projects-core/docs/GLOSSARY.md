@@ -9,6 +9,10 @@
 | projects.projects.create | Create Project |
 | projects.milestones.complete | Complete Milestone |
 | projects.billing.request | Request Project Billing |
+| projects.projects.hold | Place Record On Hold |
+| projects.projects.release | Release Record Hold |
+| projects.projects.amend | Amend Record |
+| projects.projects.reverse | Reverse Record |
 | projects.projections.refresh | Job definition queued on `projects-projections`. |
 | projects.reconciliation.run | Job definition queued on `projects-reconciliation`. |
 | project-delivery-lifecycle | Create, approve, deliver, bill, amend, and close project execution records. |

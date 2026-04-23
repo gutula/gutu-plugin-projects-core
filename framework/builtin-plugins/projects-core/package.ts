@@ -85,7 +85,11 @@ export default definePackage({
   "publicCommands": [
     "projects.projects.create",
     "projects.milestones.complete",
-    "projects.billing.request"
+    "projects.billing.request",
+    "projects.projects.hold",
+    "projects.projects.release",
+    "projects.projects.amend",
+    "projects.projects.reverse"
   ],
   "publicQueries": [
     "projects.delivery-summary",
