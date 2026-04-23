@@ -1,0 +1,9 @@
+{
+  "workspace": "projects",
+  "route": "/admin/business/projects",
+  "pageTitle": "Projects Control Room",
+  "defaultRecordState": "draft",
+  "defaultApprovalState": "pending",
+  "defaultPostingState": "unposted",
+  "defaultFulfillmentState": "none"
+}

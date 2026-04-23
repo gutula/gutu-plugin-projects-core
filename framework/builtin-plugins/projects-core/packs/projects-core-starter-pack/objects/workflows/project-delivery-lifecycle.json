@@ -1,0 +1,9 @@
+{
+  "workflowId": "project-delivery-lifecycle",
+  "actors": [
+    "project-manager",
+    "approver",
+    "delivery-lead"
+  ],
+  "description": "Create, approve, deliver, bill, amend, and close project execution records."
+}

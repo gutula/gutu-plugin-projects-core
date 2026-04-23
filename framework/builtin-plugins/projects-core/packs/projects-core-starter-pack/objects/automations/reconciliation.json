@@ -1,0 +1,10 @@
+{
+  "automationId": "projects-core.reconciliation.default",
+  "trigger": "exception-record-opened",
+  "action": "projects.reconciliation.run",
+  "queues": [
+    "budget-overrun-review",
+    "timesheet-approval-backlog",
+    "change-request-certification"
+  ]
+}

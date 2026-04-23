@@ -1,0 +1,20 @@
+{
+  "pluginId": "projects-core",
+  "reports": [
+    "Project Wise Stock Tracking",
+    "Daily Timesheet Summary",
+    "Project Budget Burn",
+    "Milestone Billing Status"
+  ],
+  "exceptionQueues": [
+    "budget-overrun-review",
+    "timesheet-approval-backlog",
+    "change-request-certification"
+  ],
+  "operationalScenarios": [
+    "project-setup",
+    "time-and-expense-capture",
+    "milestone-billing-request",
+    "change-order-governance"
+  ]
+}

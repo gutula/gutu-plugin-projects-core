@@ -1,0 +1,25 @@
+{
+  "packageId": "projects-core",
+  "packName": "projects-core-starter-pack",
+  "expectedActions": [
+    "projects.projects.create",
+    "projects.milestones.complete",
+    "projects.billing.request"
+  ],
+  "expectedResources": [
+    "projects.projects",
+    "projects.milestones",
+    "projects.billing-requests"
+  ],
+  "expectedReports": [
+    "Project Wise Stock Tracking",
+    "Daily Timesheet Summary",
+    "Project Budget Burn",
+    "Milestone Billing Status"
+  ],
+  "expectedExceptionQueues": [
+    "budget-overrun-review",
+    "timesheet-approval-backlog",
+    "change-request-certification"
+  ]
+}

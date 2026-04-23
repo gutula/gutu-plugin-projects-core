@@ -1,0 +1,18 @@
+{
+  "plugin": "projects-core",
+  "requiredPlugins": [
+    "auth-core",
+    "org-tenant-core",
+    "role-policy-core",
+    "audit-core",
+    "workflow-core",
+    "traceability-core",
+    "party-relationships-core"
+  ],
+  "requiredCapabilities": [
+    "ui.register.admin",
+    "api.rest.mount",
+    "data.write.projects",
+    "events.publish.projects"
+  ]
+}
