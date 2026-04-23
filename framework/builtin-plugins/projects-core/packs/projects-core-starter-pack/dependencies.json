@@ -9,6 +9,26 @@
     "traceability-core",
     "party-relationships-core"
   ],
+  "recommendedPlugins": [
+    "sales-core",
+    "accounting-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "procurement-core",
+    "support-service-core",
+    "hr-payroll-core",
+    "contracts-core"
+  ],
+  "integrationOnlyPlugins": [
+    "business-portals-core"
+  ],
+  "suggestedPacks": [
+    "sector-education",
+    "sector-epc-professional-delivery",
+    "sector-nonprofit",
+    "sector-professional-services"
+  ],
+  "standaloneSupported": true,
   "requiredCapabilities": [
     "ui.register.admin",
     "api.rest.mount",

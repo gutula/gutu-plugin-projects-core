@@ -1,6 +1,34 @@
 {
   "packageId": "projects-core",
   "packName": "projects-core-starter-pack",
+  "requiredPlugins": [
+    "auth-core",
+    "org-tenant-core",
+    "role-policy-core",
+    "audit-core",
+    "workflow-core",
+    "traceability-core",
+    "party-relationships-core"
+  ],
+  "recommendedPlugins": [
+    "sales-core",
+    "accounting-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "procurement-core",
+    "support-service-core",
+    "hr-payroll-core",
+    "contracts-core"
+  ],
+  "integrationOnlyPlugins": [
+    "business-portals-core"
+  ],
+  "suggestedPacks": [
+    "sector-education",
+    "sector-epc-professional-delivery",
+    "sector-nonprofit",
+    "sector-professional-services"
+  ],
   "expectedActions": [
     "projects.projects.create",
     "projects.milestones.complete",

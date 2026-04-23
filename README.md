@@ -61,11 +61,26 @@ This tier is justified because unit coverage exists, contract coverage exists, i
 | Manifest ID | `projects-core` |
 | Repo | [gutu-plugin-projects-core](https://github.com/gutula/gutu-plugin-projects-core) |
 | Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `traceability-core`, `party-relationships-core` |
+| Recommended Plugins | `sales-core`, `accounting-core` |
+| Capability Enhancing | `procurement-core`, `support-service-core`, `hr-payroll-core`, `contracts-core` |
+| Integration Only | `business-portals-core` |
+| Suggested Packs | `sector-education`, `sector-epc-professional-delivery`, `sector-nonprofit`, `sector-professional-services` |
+| Standalone Supported | Yes |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.projects`, `events.publish.projects` |
 | Provided Capabilities | `projects.projects`, `projects.milestones`, `projects.billing-requests` |
 | Runtime | bun>=1.3.12 |
 | Database | postgres, sqlite |
 | Integration Model | Actions+Resources+Jobs+Workflows+UI |
+
+## Installation Guidance
+
+- Required plugins: `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `traceability-core`, `party-relationships-core`
+- Recommended plugins: `sales-core`, `accounting-core`
+- Capability-enhancing plugins: `procurement-core`, `support-service-core`, `hr-payroll-core`, `contracts-core`
+- Integration-only plugins: `business-portals-core`
+- Suggested packs: `sector-education`, `sector-epc-professional-delivery`, `sector-nonprofit`, `sector-professional-services`
+- Standalone supported: yes
+- Standalone-safe for internal delivery teams; add Sales and Accounting for commercialized project-to-bill flows.
 
 ## Capability Matrix
 

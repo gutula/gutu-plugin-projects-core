@@ -60,9 +60,70 @@ export default definePackage({
       "packageId": "party-relationships-core",
       "class": "required",
       "rationale": "Required for Projects Core to keep its boundary governed and explicit."
+    },
+    {
+      "packageId": "sales-core",
+      "class": "optional",
+      "rationale": "Recommended with Projects Core for smoother production adoption and operator experience."
+    },
+    {
+      "packageId": "accounting-core",
+      "class": "optional",
+      "rationale": "Recommended with Projects Core for smoother production adoption and operator experience."
+    },
+    {
+      "packageId": "procurement-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Projects Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "support-service-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Projects Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "hr-payroll-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Projects Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "contracts-core",
+      "class": "capability-enhancing",
+      "rationale": "Improves Projects Core with deeper downstream automation, visibility, or workflow coverage."
+    },
+    {
+      "packageId": "business-portals-core",
+      "class": "integration-only",
+      "rationale": "Only needed when Projects Core must exchange data or actions with adjacent or external surfaces."
     }
   ],
-  "optionalWith": [],
+  "recommendedPlugins": [
+    "sales-core",
+    "accounting-core"
+  ],
+  "capabilityEnhancingPlugins": [
+    "procurement-core",
+    "support-service-core",
+    "hr-payroll-core",
+    "contracts-core"
+  ],
+  "integrationOnlyPlugins": [
+    "business-portals-core"
+  ],
+  "suggestedPacks": [
+    "sector-education",
+    "sector-epc-professional-delivery",
+    "sector-nonprofit",
+    "sector-professional-services"
+  ],
+  "standaloneSupported": true,
+  "installNotes": [
+    "Standalone-safe for internal delivery teams; add Sales and Accounting for commercialized project-to-bill flows."
+  ],
+  "optionalWith": [
+    "sales-core",
+    "accounting-core"
+  ],
   "conflictsWith": [],
   "providesCapabilities": [
     "projects.projects",

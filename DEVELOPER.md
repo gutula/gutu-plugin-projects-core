@@ -54,6 +54,11 @@ Owns project execution, milestone progress, and delivery-driven billing readines
 | Field | Value |
 | --- | --- |
 | Depends On | `auth-core`, `org-tenant-core`, `role-policy-core`, `audit-core`, `workflow-core`, `traceability-core`, `party-relationships-core` |
+| Recommended Plugins | `sales-core`, `accounting-core` |
+| Capability Enhancing | `procurement-core`, `support-service-core`, `hr-payroll-core`, `contracts-core` |
+| Integration Only | `business-portals-core` |
+| Suggested Packs | `sector-education`, `sector-epc-professional-delivery`, `sector-nonprofit`, `sector-professional-services` |
+| Standalone Supported | Yes |
 | Requested Capabilities | `ui.register.admin`, `api.rest.mount`, `data.write.projects`, `events.publish.projects` |
 | Provides Capabilities | `projects.projects`, `projects.milestones`, `projects.billing-requests` |
 | Owns Data | `projects.projects`, `projects.tasks`, `projects.milestones`, `projects.billing-requests` |
